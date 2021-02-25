@@ -37,5 +37,12 @@ D, I, F = constants
 
 print(D, I, F, streets, paths)
 
+# Testing Stuff
 c1 = car(paths[0], streets)
 c2 = car(paths[1], streets)
+
+for i in range(6):
+    print(str(i) + " curr: " + c2.currRoad(i))
+    print(c2.atIntersection(i))
+    if i == 3:
+        c2.stopped(i)
