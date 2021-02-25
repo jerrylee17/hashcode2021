@@ -17,7 +17,7 @@ class intersection:
     
     def getSmallestWeight(self):
         if self.checkCycle():
-            continue
+            return
         rWeight = None
         rName = None
         seconds = 0
@@ -52,11 +52,11 @@ class car:
         self.roadsLeft = road[1:]
         self.currRoad = road[0]
 
-    def move(self):
+    def move(self, time):
         self.currRoad = roadsLeft.pop(0)
         self.currTime += time
     
-    def wait(time):
+    def wait(self, time):
         self.currTime += time
     
     def calculateWeight(self):
