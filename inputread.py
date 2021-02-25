@@ -1,3 +1,5 @@
+from classes import car
+
 def parseData(inputFile):
     '''
     Returns a tuple: 
@@ -34,3 +36,6 @@ constants, streets, paths = parseData('a.txt')
 D, I, F = constants
 
 print(D, I, F, streets, paths)
+
+c1 = car(paths[0], streets)
+c2 = car(paths[1], streets)
