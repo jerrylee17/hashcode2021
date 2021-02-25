@@ -28,7 +28,9 @@ def parseData(inputFile):
         path[0] = int(path[0])
         paths.append(path)
         ci += 1
+    return ((D, I, F), streets, paths)
 
 constants, streets, paths = parseData('a.txt')
 D, I, F = constants
 
+print(D, I, F, streets, paths)
