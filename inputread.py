@@ -1,4 +1,4 @@
-from classes import car
+from classes import car, road, intersection
 
 def parseData(inputFile):
     '''
@@ -32,7 +32,37 @@ def parseData(inputFile):
         ci += 1
     return ((D, I, F), streets, paths)
 
-constants, streets, cars = parseData('a.txt')
+constants, streets, paths = parseData('a.txt')
 D, I, F = constants
 
-print(D, I, F, streets, cars)
+print(D, I, F, streets, paths)
+
+roads = []
+cars = []
+intersections = []
+
+for s in range(len(streets)):
+    roads.append(road((streets[s][0], streets[s][1]), streets[s][2], streets[s][3]))
+
+for p in range(len(paths)):
+    cars.append(car(paths[0][1:]))
+
+for i in range(I):
+    intersections.append(intersection(I, roads))
+
+
+# roads_dict = dict()
+# for street in streets:
+#     start_intersection, end_intersection, street_name, time = street
+#     if street_name not in roads_dict:
+#         roads_dict[street_name] = []
+#     roads_dict[street_name].append([start_intersection, end_intersection, time, []])
+
+# # print(roads_dict)
+# print(cars)
+# for car in cars:
+#     starting_street = car[1]
+#     if starting_street in roads_dict:
+#         roads_dict[starting_street][0][3].append((car, 0))
+        
+# print(roads_dict)
