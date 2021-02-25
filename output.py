@@ -18,9 +18,9 @@ def output(file, intersections):
         for intersection in intersections:
             s = ''
             intersection_number = intersection.number
-            s += intersection_number + '\n'
+            s += str(intersection_number) + '\n'
             incoming_streets = len(intersection.cycle)
-            s += incoming_streets + '\n'
+            s += str(incoming_streets) + '\n'
             for r in intersection.cycle:
-                s += r[0] + ' ' + r[1] + '\n'
-            outfile.write(s + '\n')
+                s += str(r[0]) + ' ' + str(r[1]) + '\n'
+            outfile.write(s)

@@ -1,3 +1,4 @@
+from output import output
 def parseData(inputFile):
     '''
     Returns a tuple: 
@@ -30,7 +31,97 @@ def parseData(inputFile):
         ci += 1
     return ((D, I, F), streets, paths)
 
-constants, streets, cars = parseData('a.txt')
+class intersection:
+    def __init__(self, n):
+        self.number = n
+        self.cycle = []
+
+filename = 'b.txt'
+
+constants, streets, cars = parseData(filename)
 D, I, F = constants
 
 
+intersections = []
+for i in range(I):
+    me = intersection(i)
+    intersections.append(me)
+
+for r in streets:
+    s, e = r[0], r[1]
+    # intersections[s].cycle.append((r[2], 1))
+    intersections[e].cycle.append((r[2], 10))
+
+output(f'{filename[0]}-result.txt', intersections)
+
+filename = 'c.txt'
+
+constants, streets, cars = parseData(filename)
+D, I, F = constants
+
+
+intersections = []
+for i in range(I):
+    me = intersection(i)
+    intersections.append(me)
+
+for r in streets:
+    s, e = r[0], r[1]
+    # intersections[s].cycle.append((r[2], 1))
+    intersections[e].cycle.append((r[2], 10))
+
+output(f'{filename[0]}-result.txt', intersections)
+
+filename = 'd.txt'
+
+constants, streets, cars = parseData(filename)
+D, I, F = constants
+
+
+intersections = []
+for i in range(I):
+    me = intersection(i)
+    intersections.append(me)
+
+for r in streets:
+    s, e = r[0], r[1]
+    # intersections[s].cycle.append((r[2], 1))
+    intersections[e].cycle.append((r[2], 10))
+
+output(f'{filename[0]}-result.txt', intersections)
+
+filename = 'e.txt'
+
+constants, streets, cars = parseData(filename)
+D, I, F = constants
+
+
+intersections = []
+for i in range(I):
+    me = intersection(i)
+    intersections.append(me)
+
+for r in streets:
+    s, e = r[0], r[1]
+    # intersections[s].cycle.append((r[2], 1))
+    intersections[e].cycle.append((r[2], 10))
+
+output(f'{filename[0]}-result.txt', intersections)
+
+filename = 'f.txt'
+
+constants, streets, cars = parseData(filename)
+D, I, F = constants
+
+
+intersections = []
+for i in range(I):
+    me = intersection(i)
+    intersections.append(me)
+
+for r in streets:
+    s, e = r[0], r[1]
+    # intersections[s].cycle.append((r[2], 1))
+    intersections[e].cycle.append((r[2], 2))
+
+output(f'{filename[0]}-result.txt', intersections)
